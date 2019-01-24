@@ -1,4 +1,6 @@
 
+import kivy
+from plyer import flash, vibrator
 from time import sleep
 
 from MorseCode import *
@@ -11,8 +13,6 @@ signal = toSignal(encode(mes))
 
 print(signal)
 
-import kivy
-from plyer import flash, vibrator
 
 for char in signal:
     if char == "1":
@@ -20,7 +20,7 @@ for char in signal:
         vibrator.vibrate(time=flashTime)
     elif char == "0":
         flash.off()
-        
+
     sleep(flashTime)
 
 flash.off()
